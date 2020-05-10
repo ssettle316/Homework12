@@ -42,16 +42,35 @@ class DB {
   // Find all roles, join with departments to display the department name
 
   // Create a new role
+  createRole(role) {
+    return this.connection.query("INSERT INTO role SET ?", role);
+  }
 
   // Remove a role from the db
+  removeRole(roleId) {
+    return this.connection.query(
+      "DELETE FROM role WHERE id = ?",
+      roleId
+    );
+  }
 
   // Find all departments, join with employees and roles and sum up utilized department budget
   // QUERY = "SELECT department.id, department.name, SUM(role.salary) AS utilized_budget FROM employee 
   //LEFT JOIN role on employee.role_id = role.id LEFT JOIN department on role.department_id = department.id GROUP BY department.id, department.name;"
   
   // Create a new department
+  createDepartment(department) {
+    return this.connection.query("INSERT INTO department SET ?", department);
+  }
 
+  
   // Remove a department
+  removeDepartment(departmentId) {
+    return this.connection.query(
+      "DELETE FROM department WHERE id = ?",
+      departmentId
+    );
+  }
 
   // Find all employees in a given department, join with roles to display role titles
 
