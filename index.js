@@ -147,7 +147,7 @@ async function viewEmployeesByDepartment() {
   console.table(employeesByDepartment);
 
   loadMainPrompts();
-
+}
 
 //Create viewEmployeesByManager function
 async function viewEmployeesByManager() {
@@ -157,7 +157,7 @@ async function viewEmployeesByManager() {
   console.table(employeesByManager);
 
   loadMainPrompts();
-
+}
 //save
 async function removeEmployee() {
   const employees = await db.findAllEmployees();

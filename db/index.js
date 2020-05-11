@@ -37,9 +37,15 @@ class DB {
 
   // Find all employees except the given employee id
   
+
   // Update the given employee's manager
 
   // Find all roles, join with departments to display the department name
+  findAllRoles() {
+    return this.connection.query(
+      "SELECT role.id, role.title, role.salary, role.department;"
+    );
+  }
 
   // Create a new role
   createRole(role) {
